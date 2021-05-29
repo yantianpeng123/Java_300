@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="970670d9-f8b8-4fb3-9cae-7e65e1d11963" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/yantianpeng/day_01/Demo_01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yantianpeng/day_01/TestConstans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yantianpeng/day_02/Test_int.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note_book/Java基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/note_book/Java基础.md" afterDir="false" />
     </list>
@@ -64,13 +63,26 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestConstans">
+  <component name="RunManager" selected="Application.Test_int">
     <configuration name="TestConstans" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yantianpeng.day_01.TestConstans" />
       <module name="Java_300" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.yantianpeng.day_01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_int" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yantianpeng.day_02.Test_int" />
+      <module name="Java_300" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yantianpeng.day_02.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_int" />
         <item itemvalue="Application.TestConstans" />
         <item itemvalue="Application.test_01" />
       </list>
@@ -109,7 +122,8 @@
       <option name="presentableId" value="Default" />
       <updated>1621955634733</updated>
       <workItem from="1621955636004" duration="3677000" />
-      <workItem from="1622117167489" duration="2224000" />
+      <workItem from="1622117167489" duration="2784000" />
+      <workItem from="1622266149837" duration="3345000" />
     </task>
     <servers />
   </component>
@@ -129,22 +143,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1178" height="194" key="GridCell.Tab.0.bottom" timestamp="1622044857487">
+    <state width="1178" height="194" key="GridCell.Tab.0.bottom" timestamp="1622291088630">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1178" height="194" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1622044857487" />
-    <state width="1178" height="194" key="GridCell.Tab.0.center" timestamp="1622044857486">
+    <state width="1178" height="194" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1622291088630" />
+    <state width="1178" height="194" key="GridCell.Tab.0.center" timestamp="1622291088630">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1178" height="194" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1622044857486" />
-    <state width="1178" height="194" key="GridCell.Tab.0.left" timestamp="1622044857485">
+    <state width="1178" height="194" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1622291088630" />
+    <state width="1178" height="194" key="GridCell.Tab.0.left" timestamp="1622291088629">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1178" height="194" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1622044857485" />
-    <state width="1178" height="194" key="GridCell.Tab.0.right" timestamp="1622044857486">
+    <state width="1178" height="194" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1622291088629" />
+    <state width="1178" height="194" key="GridCell.Tab.0.right" timestamp="1622291088630">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="1178" height="194" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1622044857486" />
+    <state width="1178" height="194" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1622291088630" />
     <state x="229" y="82" key="SettingsEditor" timestamp="1622214741074">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
