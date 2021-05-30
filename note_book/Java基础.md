@@ -453,7 +453,7 @@
                         // 定义char字符
                         char e1 = 'a';
                         char e2 ='中';
-                
+                   
                         char e3 ='\u0078';
                         System.out.println(e3);
                 ```
@@ -476,8 +476,146 @@
       10. 运算符:
       
           1. 计算机最基本用途之一就是执行数学运算，作为一门计算机语言，Java提供啦一套丰富的运算符来操作变量。![image-20210529223237251](../note_book/images/image-20210529223237251.png)
+          
           2. 算术运算符:
              1. 算术运算符，+ - / * % 属于二元运算符，二元运算符号指的是需要两个操作数才能完成运算的运算符号。其中%是取模运算符，也就是我们常说求余数操作。
+             
              2. 二元运算符规则:
-      
+             
+                1. 整数运算:
+             
+                   1. 如果两个操作数有一个为long，则结果也是long。
+                   2. 没有long时，结果为int，即使操作数权威short，byte，结果也是int，
+             
+                2. 浮点数运算:
+             
+                   1. 如果两个操作数有一个时double，则结果为double。
+                   2. 只有两个操作数都是float，则结果全部为float。
+             
+                3. 取模运算:
+             
+                   1. 其操作数可以作为浮点数，一般使用整数，结果是"余数"，“余数”符号和左边操作数相同。
+             
+                4. 
+             
+                   ```java
+                   //算术运算
+                           int a =3;
+                           long b = 4;
+                           long c = a+b; //当其中一个为long的则，类型会转换为long类型。
+                   
+                           byte b_1 = 3;
+                           byte b_2 = 4;
+                           int b_3 =  b_1+b_2;//两个都是byte的的时候，结构自动转换为int类型
+                   
+                           //取余数:“余数”符号和左边操作数相同
+                           int e = 10%3;
+                           System.out.println(e); //结果是1
+                           int d =-10%3;
+                           System.out.println(d); //结果是-1;
+                   
+                           int g = 10%-3;
+                           System.out.println(g); //结果是1
+                   ```
+             
+             3. 算术运算符++(自增)，--(自减)属于一元运算符，该类操作符只需要一个操作数。
+             
+                1. ```java
+                   //自增和自减
+                           int a_01 = 30;
+                           a_01++; //相当于a_01 = a_01+1;
+                           System.out.println(a_01);
+                   
+                           int i =10;
+                           int h = i++; //i++ 先赋值，在执行自增
+                           System.out.println(h);
+                   
+                           int j = 10;
+                           int y = ++j;//++j,先执行自增，在赋值。
+                           System.out.println(y);
+                   ```
+             
+          3. 赋值及其扩展赋值运算符:
+          
+             1. ![image-20210530152237162](../note_book/images/image-20210530152237162.png)
+          
+             2. ```java
+                int a  =3;
+                        int b =4;
+                        a+=b;//相当于 a = a+b;
+                        System.out.println(a);
+                
+                        a-=b;//相当于a = a-b;
+                        System.out.println(a);
+                
+                        a*=b;//相当于 a = a*b;
+                        System.out.println(a);
+                
+                        a/=b;//相当于a = a/b;
+                
+                        System.out.println(a);
+                ```
+          
+          4. 关系运算符:
+          
+             1. 关系运算符用来比较运算，关系运算符的结果是布尔值true或者false;
+          
+             2. ![image-20210530153154560](../note_book/images/image-20210530153154560.png)
+          
+                ```java
+                1.=是赋值运算符，而在真正的判断两个操作数是否相等的运算符号是==
+                2.== 和!= 是所有(基本和引用)数据类型都可以使用
+                3.>,>=,<,<=仅针对数值类型(byte,short,int/long,float ,double以及char)。
+                ```
+          
+             3. ```java
+                				int a  = 3;
+                        int b = 4;
+                
+                        boolean c_01 = a>b;
+                        System.out.println(c_01);
+                        boolean c_02 = a>=b;
+                
+                        System.out.println(c_02);
+                
+                        boolean c_03 = a<b;
+                        boolean c_04 = a<=b;
+                        System.out.println(c_03);
+                        System.out.println(c_04);
+                        //char和int也是可以比较的
+                        char d = 'h';
+                        int d_01 =20;
+                        System.out.println(d>d_01);
+                ```
+          
+          5. 逻辑运算符:
+          
+             1. Java中逻辑运算符,逻辑运算符的操作数和运算结果都是boolean的值。
+          
+             2. ![image-20210530154535395](../note_book/images/image-20210530154535395.png)
+          
+             3. 短路与和短路或 采用短路的方式，从左到右计算，如果只通过运算符左边的操作数就能够确定该逻辑表达式的值，则不会继续计算运算符右边的操作数，提高效率。
+          
+             4. ```java
+                 //整个表达式为false 前面第一个表达式为false 则后面的表达式不在计算。
+                       boolean b_01 = 1>2 && 2>(3/0);
+                
+                       //会报错，前面的第一个表达式为false，后面的表达式的值会报错，所以整体会报错
+                       boolean b_04 = 1>2& 2>(3/0);
+                
+                
+                       boolean b_02 = true;
+                       boolean b_03 = false;
+                
+                       System.out.println(b_02&b_03);//结果是false 与，有一个是false
+                       System.out.println(b_02|b_03);//结果是true; 或 ，有一个是true
+                        System.out.println(!b_02);//结果是为true  非 ，去反
+                        System.out.println(b_02^b_03);//结果是true 相同是false 不同是true
+                ```
+          
+          6. 位运算符:
+          
+             1. 位运算指的是进行二进制的运算。
+             2. ![image-20210530225004660](../note_book/images/image-20210530225004660.png)
+             3. 
       
