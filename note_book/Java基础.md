@@ -453,7 +453,7 @@
                         // 定义char字符
                         char e1 = 'a';
                         char e2 ='中';
-                   
+                         
                         char e3 ='\u0078';
                         System.out.println(e3);
                 ```
@@ -474,7 +474,7 @@
              2. boolean:类型几个字节说明:在《Java虚拟机规范》一书中描述，虽然定义啦boolean这种数据类型，但是只是对它提供啦非常有限的支持，在Java虚拟机中没有任何提供boolean值专用的字节码指令，Java语言表达式所操作的boolean值，在编译之前都使用Java虚拟机中int数据类型来替代，而boolean数组将会被编码成Java虚拟机的byte数组，每个元素boolean元素占8位，也就是说JVM规范指出boolean当作int处理，也就是4个字节，boolean数组当作byte数组处理，这样我们可以得出boolean类型占了单独使用是4个字节。在数组中确定是1个字节。
           
       10. 运算符:
-      
+
           1. 计算机最基本用途之一就是执行数学运算，作为一门计算机语言，Java提供啦一套丰富的运算符来操作变量。![image-20210529223237251](../note_book/images/image-20210529223237251.png)
           
           2. 算术运算符:
@@ -571,13 +571,13 @@
              3. ```java
                 				int a  = 3;
                         int b = 4;
-                
+                   
                         boolean c_01 = a>b;
                         System.out.println(c_01);
                         boolean c_02 = a>=b;
-                
+                   
                         System.out.println(c_02);
-                
+                   
                         boolean c_03 = a<b;
                         boolean c_04 = a<=b;
                         System.out.println(c_03);
@@ -599,14 +599,14 @@
              4. ```java
                  //整个表达式为false 前面第一个表达式为false 则后面的表达式不在计算。
                        boolean b_01 = 1>2 && 2>(3/0);
-                
+                   
                        //会报错，前面的第一个表达式为false，后面的表达式的值会报错，所以整体会报错
                        boolean b_04 = 1>2& 2>(3/0);
-                
-                
+             
+             
                        boolean b_02 = true;
                        boolean b_03 = false;
-                
+                    
                        System.out.println(b_02&b_03);//结果是false 与，有一个是false
                        System.out.println(b_02|b_03);//结果是true; 或 ，有一个是true
                         System.out.println(!b_02);//结果是为true  非 ，去反
@@ -616,6 +616,201 @@
           6. 位运算符:
           
              1. 位运算指的是进行二进制的运算。
+             
              2. ![image-20210530225004660](../note_book/images/image-20210530225004660.png)
-             3. 
-      
+             
+             3. ```java
+                int a =7; //二进制是00111
+                        int b =8; //二进制是01000
+                        //按位与操作& 0&0 =0; 0&1=0;1&0=0 1&1=1
+                        //只要有一个是0就是0
+                        System.out.println(a&b);//结果是0
+                        //按位或运算 | 0|0 =0; 0|1=1;1|0=1;1|1=1;
+                        //只要有一个是1就是1;
+                        System.out.println(a|b);//结果是15
+                        //按位异或^ 0^0=0;0^1=1;1^0=1;1^1=0;
+                        //相同为0，不同为1;
+                        System.out.println(a^b);//结果是15
+                        //取反 ～1=0 ～0=1;
+                        //可能会涉及到补码操作。
+                        System.out.println(~b);//结果是-9
+                
+                        //移位运算
+                        int c = 5;
+                        int d = 40;
+                        //相当于5*2*2*2; 左移
+                        System.out.println(c<<3);
+                        //相当于40/2/2/2  右移
+                        System.out.println(d>>3);
+                ```
+             
+          7. 字符串连接符:(+)
+          
+             1. "+"运算符两侧的操作数只要有一个数字符串(String)类型，系统会自动将另外一个操作数转换为字符串然后在进行连接。
+          
+             2. ```java
+                int a_01 = 12;
+                        System.out.println("a="+a_01);//结果是a=12;
+                int a="3";
+                int b = 4;
+                System.out.println(a+b);//结果是34
+                ```
+          
+          8. 条件运算符(三目运算符):
+          
+             1. ```java
+                //语法格式:
+                x?y:z;
+                其中x为boolean类型表达式，先计算x的值，则整个表达式运算结果为表达式y的值，否则整个运算结果表达式为z的值。
+                  			int score = 100;
+                        int x =-100;
+                        String type = score<60?"不及格":"及格";
+                        System.out.println("type="+type);
+                        int flag = x>0?1:(x==0?0:-1);
+                        System.out.println("flag="+flag);
+                ```
+          
+          9. 运算符优先级:
+          
+             1. ![image-20210531220305245](../note_book/images/image-20210531220305245.png)
+          
+      11. 数据类型的转换:
+
+          1. 自动类型转换:除了boolean类型的以外的其他七种都是可以做类型转换的，自动类型转换指的是容量小的数据类型可以转换为容量大的数据类型，如图，其中黑色的实线表示无数据丢失的自动类型转换，虚线表示在转换时可能会造成精度损失。
+
+          2. ![image-20210601074559497](../note_book/images/image-20210601074559497.png)
+
+          3. 可以将整型常量，直接赋值给byte，short, char等变量类型，而不需要进行强制类型转换，只要不超过其表达的范围即可。
+
+          4. 强制类型转换:强制类型转换，又被称为造型(cast),用于强制的转换一个数值的类型，再有可能丢失信息的情况进行的转换是通过造型来完成的，但可能造成精度降低或者溢出。
+
+          5. ```java
+             //语法格式:
+             //(type)var 
+               //运算符中()中的type表示将值var想要转换成的目标数据类型。
+             double a =3.419;
+                     int x  = (int)a;//浮点型转换为整数，直接舍弃小数部分
+                     System.out.println(x);
+             
+                     int c  =99;
+                     System.out.println((char)c); //转换成char类型
+                     //byte 范围是-127到128之间
+                     // 300超出范围啦 会转换成一个完全没有关系的值
+                     byte b =(byte) 300;
+                     System.out.println(b);
+             
+                     int money = 200000000;//20亿
+                     int year = 20;//20年
+                     int total = money*year;//超出total是负数，因为超出了int的范围,结果是一个完全不相关的值
+                     System.out.println("total = "+total);
+                     // 结果默认是int类型，但是超出了int的范围，结果在转换为long类型的话，
+                     // 会造成精度丢失。
+                     long total1 = money*year;
+                     System.out.println("total1="+total1);
+                     //先将其中一个数转换为long，整个表达式的值提升，全部使用long来计算。
+                     long  totla2 = (long)money* year;
+                     System.out.println("total2 ="+totla2);
+             ```
+
+      12. 简单的键盘输入和输出:
+
+          ```java
+          Scanner scanner = new Scanner(System.in);//获取键盘的操作。
+                  System.out.print("请输入您的用户名:");//给出提示
+                  String userName = scanner.nextLine();//获取输入的一行，返回的是字符串类型
+                  System.out.print("请输入你的薪水:");
+                  double salary = scanner.nextDouble();//返回的是double类型的变量
+                  System.out.print("请输入你的工作时间:");//返回的是int 类型的变量
+                  int year = scanner.nextInt();
+          
+                  System.out.println("用户名是:"+userName+"你的总工资是:"+(salary*year));
+          ```
+
+7. 控制语句:
+
+   1. 流程控制语句用来控制程序中各个语句的执行顺序的语句，可以把语句组合成一定功能的小逻辑代码块。
+
+   2. 顺序结构语句:
+
+      1. 代表先执行a，在执行b的逻辑。先找个女朋友，在结婚，再生孩子
+
+   3. 条件判断语句:
+
+      1. 代表如果...,则...的逻辑，比如，如果看到红灯，就停车，如果女朋友生气了，就买礼物。
+
+   4. 循环结构语句:
+
+      1. 代表如果...,则重复执行...比如:如果女朋友电话没打通，就再打一次。如果没有遇到合适的对象，就再去相亲。
+
+   5. 很神奇的是，三种流程控制语句，就可以表示所有的事情。实际上，任何一种 软件或者程序，小到一个练习，大到一个操作系统，本质上都是有变量，选择语句，循环语句组成的。
+
+   6. 这三种基本逻辑结构是相互支撑的，它们共同构成啦算法的基本结构，无论怎么复杂的逻辑结构，都可以通过他们来表达。上述两种结构组成的程序可以解决全部的问题，所以任何一种高级语言具备以上两种结构。
+
+   7. 条件判断:
+
+      1. 选择结构用于判断给定的条件，然后根据判断的结果来控制程序的流程，主要的条件判断结构有:if结构和siwtch结构，而if结构有分为，if单分支结构，if-else双分支结构，if-else-if-else多分支结构
+
+      2. 单分支结构:
+
+         1. ```java
+            语法结构:
+            if (布尔表达式){
+            			语句块
+            }
+            ```
+
+         2. if语句对布尔表达式进行判定，若判断为真，则执行{}中代码块，否则跳过该语句块。![image-20210601235241009](../note_book/images/image-20210601235241009.png)
+
+         3. ```java
+            // double d_01 = Math.random();//生成0到1到随机数，包含0但是不包含1
+                    // System.out.println(d_01);
+                    //生成一个0到6之间的随机数
+                    int a = 1+(int)(Math.random()*6);
+                    int b = 1+(int)(Math.random()*6);
+                    int c = 1+(int)(Math.random()*6);
+            
+                    int count =a+b+c;
+                    if (count>=15){
+                        System.out.println("手气不错，接着玩");
+                    }
+                    if(count>=10&& count<15){
+                        System.out.println("手气还可以");
+                    }
+                    if(count<10){
+                        System.out.println("手气太差了，去洗洗手");
+                    }
+                    System.out.println("第一次骰子得分是："+a+",第二次骰子是:"+b+",第三次骰子是:"+c);
+                    System.out.println("当前得分是："+count);
+            
+            //if语句可以省略{}，但是作用域只对第一句有效，但是一般不建议这么使用。
+            ```
+
+      3. 双分支结构:(if-else)结构
+
+         1. ```java
+            //语法结构:
+            if(布尔表达式){
+            	语句块1
+            }else{
+            	语句块2
+            }
+            当布尔表达式为真的时候，执行语句块1，否则执行else部分也就是语句块2。
+            ```
+
+         2. ![image-20210602001045274](../note_book/images/image-20210602001045274.png)
+
+         3. ```java
+            //随机生成一个0到4区间的半径，并根据半径求圆的周长和面积。
+                    double r =  4*Math.random();//生成0到4之间的随机数
+                    double area = Math.PI*r*r;//面积
+                    double circle = 2*r*Math.PI;//周长
+                    System.out.println("当前的半径是:"+r);
+                    if(area>=circle){
+                        System.out.println("当前的面积是:"+area+",当前的周长是:"+circle+",面积大于等于周长");
+                    }else{
+                        System.out.println("当前的面积是："+area+",当前的周长是:"+circle+",面积小于周长");
+                    }
+            ```
+
+         4. 
+
