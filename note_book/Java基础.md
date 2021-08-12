@@ -812,5 +812,1492 @@
                     }
             ```
 
-         4. 
+         4. If-else if -else 多分支结构:
 
+            1. ```java
+               语法结构:
+               if(布尔表达式1){
+               		语句块1
+               }else if(布尔表达式2){
+               	语句块2
+               }else if(布尔表达式3){
+               	语句块2
+               }else{
+               	语句块
+               }
+               //当布尔表达式1 为真的时候，执行语句块1 否则，判断布尔表达式2的值，当布尔表达式2为真时，执行语句块2，继续判断布尔表达式3....当所有的布尔表达都不满足的时候，执行else部分。
+               ```
+
+            2. ![image-20210602204150816](../note_book/images/image-20210602204150816.png)
+
+            3. ```java
+               int age  = (int)(100*Math.random());//生成0到99的数字
+                       System.out.print("生成的年纪是:"+age+",属于:");
+                       if(age<15){
+                           System.out.println("儿童，喜欢玩!");
+                       }else if(age<25){
+                           System.out.println("青年，要学习!");
+                       }else if(age<45){
+                           System.out.println("中年，要工作!");
+                       }else if(age<65){
+                           System.out.println("中老年,要补钙!");
+                       }else if(age<85){
+                           System.out.println("老年,多运动!");
+                       }else{
+                           System.out.println("老寿星,古来稀!");
+                       }
+               ```
+
+         5. switch结构:
+
+            1. switch多分支结构:
+
+            2. ```java
+               #语法结构:
+               switch(表达式){
+               	case 值1:
+               			语句序列1；
+               			break;
+               	case 值2:
+               			语句序列2;
+               			break;
+               	case 值3:
+               			语句序列3;
+               			break;
+               	default:
+               		   默认语句;
+               }
+               ```
+
+            3. switch语句:会根据表达式的值，从相匹配的case标签处开始执行，一直执行到break语句处或者是switch语句的末尾，如果表达式的值与任一case值不匹配，则进入到default语句(如果存在default语句的情况)，根据表达式的值不同可以执行许多不同的操作，switch语句中case标签，在JDK1.5之前必须是整数(long类型除外),或者是枚举，不能是字符串在JDK1.7之后可以使用字符串(String)。
+
+            4. 需要注意的是:当布尔类型的值是等值判断的情况，可以使用if-else if -else多分支结构，或者switch结构，如果布尔表达式区间判断的情况，则只能使用if-else if -else多分支结构， 
+
+            5. ![image-20210602222443504](../note_book/images/image-20210602222443504.png)
+
+            6. ```java
+               Scanner scanner = new Scanner(System.in);
+                       System.out.println("请输入1,2,3");
+                       int grade = scanner.nextInt();
+                       switch (grade){
+                           case 1:
+                               System.out.println("当前是大学一年级");
+                               break;
+                           case 2:
+                               System.out.println("当前是大学二年级");
+                               break;
+                           case 3:
+                               System.out.println("当前是大学三年级");
+                               break;
+                           default:
+                               System.out.println("输入错误");
+                       };
+               ```
+
+            7. ```java
+               Scanner scanner= new Scanner(System.in);
+                       System.out.println("请输入当前的月份:");
+                       int month = scanner.nextInt();
+                       switch (month){
+                           case 1:
+                           case 2:
+                           case 3:
+                               System.out.println("春季");
+                               break;
+                           case 4:
+                           case 5:
+                           case 6:
+                               System.out.println("夏季");
+                               break;
+                           case 7:
+                           case 8:
+                           case 9:
+                               System.out.println("秋季");
+                               break;
+                           case 10:
+                           case 11:
+                           case 12:
+                               System.out.println("冬季");
+                               break;
+                           default:
+                               System.out.println("输入错误");
+                       }
+               ```
+
+         6. 循环结构:
+
+            1. 循环结构分为两大类一类是当型，一类是直当型。
+
+            2. 当型循环:当布尔类型条件为true时，反复执行某语句，当布尔类型为false时才停止循环，比如while 与for循环
+
+            3. 直当型:先执行某个语句，在判断布尔表达式，如果是true，在执行某个语句，如此反复直到布尔类型条件表达式为false才停止循环，比如do-while循环。
+
+            4. ```java
+               while循环
+               //语法结构:
+               while(布尔表达式){
+               		//循环体
+               };
+               在循环刚开始的时候，会计算一次，布尔表达式的值，若条件为真，执行循环体，而对于后来每一次额外的循环，都会在开始前重新计算一次。
+               语句中应有是循环趋向于结束的语句，否则会出现无限循环"死循环";
+               ```
+
+            5. ![image-20210602234056939](../note_book/images/image-20210602234056939.png)
+
+            6. ```java
+               //计算1到100的值			
+               int sum = 0;
+                       int i = 0;
+                       while (i<101){
+                           sum+=i;
+                           i++;
+                       }
+                       System.out.println("从0到100的值是:"+sum);
+               ```
+
+            7. ```java
+               do --while循环:
+               do{
+               	循环体
+               }while(布尔表达式);
+               do-while循环结构会先执行循环体，在进行条件判断，条件是布尔类型的变量，如果条件是真true的话,执行循环体，否则结束循环，do-while 至少执行一次循环体，
+               ```
+
+               ![image-20210603000610308](../note_book/images/image-20210603000610308.png)
+
+               ```java
+               //do-while 计算1到100的和。
+               //do-while 先执行在判断，
+               //while循环先判断在执行
+               int  i  = 0;
+                       int sum =0;
+                       do{
+                           sum+=i;
+                           i++;
+                       }while(i<101);
+                       System.out.println("1到100的和是:"+sum);
+               ```
+
+            8. ```java
+                int i = 0;
+                       int sumOuShu = 0;//偶数和
+                       int sumOdd = 0;//奇数和
+                       int sum  =0;//总和
+                  
+                       while (i<101){
+                           if(i%2==0){
+                               sumOuShu+=i;
+                           }else {
+                               sumOdd+=i;
+                           }
+                           i++;
+                       }
+                       sum=sumOdd+sumOuShu;
+                       System.out.println("1到100的总和是:"+sum);
+                       System.out.println("1到100的偶数和是:"+sumOuShu);
+                       System.out.println("1到100的奇数和是"+sumOdd);
+               ```
+
+            9. 
+
+               ```java
+                      //打印1到130之间的数字，每行现实5个
+                      int i =0;
+                       while (i<131){
+                           System.out.print(i+" ");
+                           if ((i+1)%5==0){
+                               System.out.println("");
+                           }
+                           i++;
+                       }
+               ```
+
+         7. for循环:
+
+            1. ```java
+               //语法结构:
+               for(初始化条件;布尔表达式;迭代因子){
+               		循环体;
+               }
+               //for循环语句是支持迭代的一种通用结构，是最有效的，最灵活的循环结构，for循环在第一次反复之前要进行初始化，即执行初始化表达式;随后,对布尔类型进行判定，若判定结果为true的话，则执行循环体，否则，终止循环；最后每一次反复的时候，进行某种形式的步进，即执行迭代因子。
+               初始化部分设置循环变量的初值;
+               条件判断部分为任意布尔表达式
+               迭代因子控制循环变量的增减
+               for循环在执行条件判定后，先执行的循环体部分，在执行步进。
+               
+               ```
+
+               ![image-20210603003914895](../note_book/images/image-20210603003914895.png)
+
+            2. ```java
+               //计算1到100的和
+                       int sum = 0;
+                       for(int i=0;i<101;i++){
+                            sum+=i;
+                       }
+                       System.out.println("1到100的和是"+sum);
+               
+                       //循环输出9到1之间的数
+                       for(int i =9;i>0;i--){
+                           System.out.println("当前i的值是:"+i);
+                       }
+                       //循环输出90到0 之间的可以被3整除的数
+                       for(int i=90;i>0;i-=3){
+                           System.out.println("当前能被3整除i的值是"+i);
+                       }
+               ```
+
+         8. 逗号表达式:
+
+            1. Java里面可以用到逗号运算符的地方屈指可数，其中一处就是for循环的控制表达式，在控制表达式的初始化和步进控制部分，我们可以使用逗号表达式，而且哪一些表达式均可以独立执行。
+
+               ```java
+               for(int i=0,j=i+1;i<10;i++,j=j*2){
+                           System.out.println("当前i的值是"+i+",当前j的值是:"+j);
+                       }
+               ```
+
+         9. 嵌套循环:
+
+            1. 在一个循环语句内部嵌套一个循环或者多个循环，称为嵌套循环，while ,do-while与for循环可以任意嵌套多层。
+
+            2. ```java
+               //打印九九乘法表
+               for(int i =0;i<10;i++){
+                           for (int j = 0; j <10 ; j++) {
+                               System.out.println("当前i的值是:"+i+",当前j的值是:"+j);
+                           }
+                       }
+               
+               
+               //打印五乘五的方阵
+               for (int i = 0; i <5 ; i++) {
+                           for (int j = 0; j <5 ; j++) {
+                               System.out.print("*\t");
+                           }
+                           System.out.println();
+                       }
+               
+                  //使用嵌套循环打印一下图形
+               
+                       for (int i = 0; i <5 ; i++) {
+                           for (int j = 0; j <5 ; j++) {
+                               if(j%2==0){
+                                   System.out.print("*\t");
+                               }else{
+                                   System.out.print("#\t");
+                               }
+                           }
+                           System.out.println();
+                       }
+               
+               ```
+
+         10. break和continue:
+
+             1. 在任何循环语句的主体中，均可用break控制循环的流程，break用于强行退出循环，不在执行循环中剩余的语句。
+
+             2.  
+
+                ```java
+                 //随机产生1到100的之间的数，遇到88的时候停止循环,并统计产生多多少次
+                        int count =0;//统计运行了多少次
+                        while (true){
+                            count++;
+                            int i = (int)Math.round(Math.random()*100);//产生的随机数
+                            if (i==88){
+                                break;//停止循环
+                            }
+                        }
+                        System.out.println("总共循环了:"+count+"次");
+                ```
+
+             3. continue:语句用在循环体语句中，用于终止某次循环的过程，即跳过循环体中尚未执行的语句，接着进行下一次是否循环执行的判断。
+
+             4. continue:用在while，do-while中，continue语句立刻跳到循环首部，越过了当前循环 其余部分,用在for循环中，跳到for循环的迭代因子部分
+
+             5. ```java
+                        //把100到150之间不可以被3整除的数输出，每行显示5个
+                        int count_01 = 0;
+                        for (int i = 100; i <151 ; i++) {
+                            if(i%3==0){
+                                continue;
+                            }
+                            count_01++;
+                            System.out.print("当前的值是:"+i+"\t");
+                            if (count_01%5==0){
+                                System.out.println();
+                            }
+                        }
+                ```
+
+             6. 带标签的break语句和continue语句:goto关键字很早就在程序设计语言中出现，尽管goto语句是java的一个保留关键字，但是未在Java中得到正式使用，Java没有goto语句。然而在break和continue这两个关键字的身上，我们依然可以看到goto的影子--带标签的break和continue,标签是指后面跟着一个冒号标识符，例如"label:".对java来说唯一用到标签的地方是在循环语句之前，而在循环之前设置的标签唯一理由是,我们希望在其中嵌套另外一个循环，由于break和contine关键字，通常只当前循环，但若随标签使用，它们会就会中断到存在标签的地方，在goto有害论中，最有问题的标签，而非goto，随着标签在一个程序中里面数量的增多，产生错误的机会也越来越多，但Java标签不会造成这方面的问题，因为它们的活动场所被限制，不可通过特别的方式到处传递程序的控制权，由此也引发了一个有趣的问题:通过限制语句的能力，反而能使一项语言特性更加有用。
+
+             7. ```java
+                  //打印100到150之间的质数
+                        outer:for (int i = 100; i <150 ; i++) {
+                            for (int j = 2; j <i/2 ; j++) {
+                                if(i%j==0){
+                                    continue outer;
+                                }
+                            }
+                            System.out.println(i+"\t");
+                        }
+                ```
+
+             8. 作业:
+
+                1. 薪水计算器:通过键盘输入用户的月薪，每年是几个月的薪水，输出用户的年薪，知道键盘输入exit,则这个退出程序，输入中途，键盘输入next,则这个用户退出计算，算下一个用户的年薪.
+
+                2. ```java
+                   //薪水计算器:通过键盘输入用户的月薪，每年是几个月的薪水，输出用户的年薪，
+                           // 直到键盘输入exit,则这个退出程序，输入中途，键盘输入next,则这个用户退出计算，算下一个用户的年薪
+                           System.out.println("年薪计算器小软件");
+                           Scanner scanner = new Scanner(System.in);
+                           while (true){
+                               System.out.println("请输入用户的月薪");
+                               int monthSalary  = scanner.nextInt();
+                               System.out.println("请输入用户是多少薪");
+                               int months = scanner.nextInt();
+                               int yearSalary = months*monthSalary;//年薪
+                   
+                               System.out.println("年薪是"+yearSalary);
+                               if(yearSalary>=1000000&& yearSalary<2000000){
+                                   System.out.println("恭喜你，超过了99%的国人");
+                               }else if(yearSalary>=200000){
+                                   System.out.println("恭喜你，超过了100%的国人");
+                               }
+                               System.out.println("请输入exit或者next,exit退出程序，next计算下一个年薪");
+                               scanner.nextLine();
+                               String command = scanner.nextLine();
+                   
+                               if ("exit".equals(command)) {
+                                   System.out.println("退出软件");
+                                   break;
+                               }else if("next".equals(command)){
+                                   System.out.println("计算下一个用户的的年薪");
+                                   continue;
+                               }else {
+                                   System.out.println("指令错误，，程序退出");
+                                   break;
+                               }
+                           }
+                   ```
+
+   8. 方法:
+
+      1. 语句块:语句块(有时候被称为复合语句，)使用花括号括起来的任意数量的简单的java语句，块明确啦局部变量的作用域，块中的代码块，作为一个整体，是要被一起执行的。块可以被嵌套在另外一块中，但是不能在两个嵌套块内声明同名的变量，语句块可以使用外部的变量，而不能使用语句块中定义的变量，因为语句块中定义的变量作用域在限制在语句块内。
+
+      2. 定义:
+
+         1. 方法就是一段用来完成特定功能的代码片段，类似于其他语言的函数。
+
+         2. 方法用于定义该类的实例的行为特征和功能的实现，方法是类和对象特征的抽象，方法很类似于面向过程中的函数，面向过程中，函数是最基本的单位，整个程序由一个个函数调用组成的，面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。
+
+         3. ```java
+                //方法的定义
+            //    [修饰符1  修饰符2 ...] 返回值类型  方法名称(形式参数列表){
+            //        java语句
+            //    }
+            
+            
+                //方法的调用
+            //    对象名.方法名称(实参数列表)
+            ```
+
+         4. 方法的详细说明:
+
+            1. 形式参数:在方法声明时用于接收外界传入的数据
+            2. 实参:调用方法时实际传给方法的数据
+            3. 返回值:方法执行完毕后返还给调用它的环境的数据
+            4. 返回值类型:实现约定的返回值的数据类型，如无返回值，必须显示指定为void。
+
+         5. ```java
+            //定义一个没有返回值的参数
+                public static void loveU(){
+                    System.out.println("I Love U!");
+                }
+            
+                //定义一个返回值为整数的方法
+                public static int add(int num1,int num2){
+                    return num1+num2;
+                }
+                
+                //方法的调用
+                    loveU();
+                    //方法的调用
+                    int a_01 = add(1,2);
+                    System.out.println(a_01);
+            ```
+
+         6. 实参数的目的，数据类型和次序必须和所调用的方法声明的形式参数列表匹配。
+
+            1. return 语句终止方法的运行并指定返回的数据
+            2. java中进行方法的调用中传递参数时，遵循值传递的的原则(传递的都是数据的副本)。
+               1. 基本类型传递的该数据的copy值
+               2. 引用类型传递的是该对象引用copy值，但指向的同一个对象。
+
+         7. 方法的重载(overload):
+
+            1. 方法的重载是值一个类中可以定义多个方法名相同，但是参数不同的方法，调用时，会根据不同的参数自动匹配对应的方法。
+
+            2. 构成重载的条件:
+
+               1. 不同的含义:形参类型，形参个数，形参顺序不同
+               2. 只有返回值不同不构成方法的重载。
+               3. 只有形参的名称不同，不构成方法的重载。
+
+            3. ```java
+               /**
+                    *  方法的重载
+                    * @return
+                    */
+                   public static int add(){
+                       return 0;
+                   }
+               
+                   /**
+                    * 方法的重载
+                    * @param i
+                    * @param j
+                    * @return
+                    */
+                   public static int add(int i ,int j){
+                       return i+j;
+                   }
+               
+                   /**
+                    * 方法的重载
+                    * @param i
+                    * @param j
+                    * @param k
+                    * @return
+                    */
+                   public  static int add(int i,int j,int k){
+                       return i+j+k;
+                   }
+                   /**
+                    * 方法的重载
+                    * @param i
+                    * @param j
+                    * @return
+                    */
+                   public static double add(double i,double j){
+                       return i+j;
+                   }
+               
+               
+                   public static String add(String name,int i){
+                       return "name"+i;
+                   }
+               ```
+
+         8. ```java
+            //定义一个方法处理迟到问题。
+                //输入参数 员工名称和月薪
+                //处理逻辑:
+                //迟到10分钟，警告。。迟到11-20分钟 罚款100。迟到21-30分钟 罚款200
+                //迟到30分钟以上 扣除半天工资
+                //迟到1个小时以上，按照旷工处理扣除3日工资
+                //输出返款金额和处理意见
+            
+                public static void chidao(String name,double salary,int latetime){
+                    double fakuan = 0;
+                    if(latetime<0&& latetime>=10){
+                        System.out.println("警告！！！以后不在迟到啦");
+                    }else if(latetime>=11&& latetime<=20){
+                        System.out.println("罚款100元");
+                        fakuan =100;
+                    }else if(latetime>=21&& latetime<=30){
+                        System.out.println("罚款200元");
+                        fakuan =200;
+                    }else if (latetime>=31&&latetime<=60){
+            
+                        fakuan = (int)(salary/21.75*2);
+                        System.out.println("扣除半天工资"+);
+                    }else {
+                        fakuan = (int)(salary/21.75)*3;
+                        System.out.println("扣除三天工资:"+fakuan);
+            
+                    }
+            ```
+
+   9. 递归结构:
+
+      1. 递归是一种常见的解决问题的方式，就是把问题逐渐简单化，递归的基本思想就是"自己调用自己",一个使用递归技术的方法将会直接或者间接大调用自己。
+
+      2. 利用递归可以简化程序的来解决一些复杂的问题，比如：斐波那契数列，汉诺塔，快排等问题。
+
+      3. 递归结构分为两个部分:
+
+         1. 定义递归头:解答;什么时候不调用自身方法，如果没有头的，陷入死循环，递归头也就是递归结束的条件。
+         2. 递归体:什么时候需要调用自身方法。
+
+      4. ```java
+         /**
+              * 计算阶乘
+              * n=1 1*1
+              * n=2 1*2
+              * n=3 1*2*3;
+              */
+             public static int  jiecheng(int n){
+                 if(n==1){//递归头
+                     return 1;
+                 }else {//递归体
+                    return n*jiecheng(n-1);
+                 }
+             }
+         
+             /**
+              * 斐波那契数列
+              * @param n
+              * @return
+              */
+             public static int Fibonacci(int n){
+                 if (n==0){//
+                     return 0;
+                 }else if(n==1){
+                     return 1;
+                 }else{
+                     return Fibonacci(n-1)+Fibonacci(n-2);
+                 }
+             }
+         ```
+
+8. 面向对象:
+
+   1. 表格结构和类结构:
+
+      1. 我们在现实生活中，思考问题，处理问题，往往都是使用表格作为工具。实际上，表格思维就是一种典型的面相对象思维。
+      2. 实际上互联网上大多数数据的本质都是表格，我们在这里通过从表格表示数据开始，引入对象和类大家就会发现原来表格就是对象。
+
+   2. 面向对象和面向过程的区别:
+
+      1. 面向过程和面向对象，都是对软件分析，设计和开发的一种思想，他指导这人们以不同的方法分析，设计和开发软件，早期现有面向过程思想，随着软件的规模的扩大，问题的复杂性的提高，面向过程的弊端越来越明显的显示出来，出现了面向的对象思想并成为目前主流的方式，两者都贯穿于软件分析，设计和开发的各个阶段，对应面向对象就分别称为面向对象分析式(OOA),面向对象设计(OOD)，和面向对象编程(OOP),C语言是一种典型的面向过程语言，Java是一种典型面向对象语言
+      2. 面向过程思考问题时候，我们首先思考，怎么按步骤实现，并且将对应成方法，一步一步，最终完成，这个适合简单的任务，不需要过多协作的情况下。比如如何开车，我们很容易就可以实现这个步骤。
+      3. ![image-20210609233314959](../note_book/images/image-20210609233314959.png)
+      4. 但是但我们思考复杂的设计任务的时候，比如如何造车，就会列出来1234这样的步骤，是不可能实现，那是因为，造车很复杂需要很多的协作才可以完成，此时面向对象就出现啦。
+      5. 面向对象思想更加契合人的思维模式，我们首先思考的是怎么设计这个东西，比如我们想造车，我们要想的话怎么去设计车，而不是按照步骤造车，这就是思维方式的转变。
+      6. 面向对象和面向过程都是解决问题的思维方式，都是代码组织的方式
+         1. 面向过程是一种执行者的思维，解决简单问题可以使使用面向过程
+         2. 面向对象是一种设计者思维，解决复杂，需要协作的问题可以使用面向对象解决。
+         3. 面向对象离不开面向过程:
+            1. 宏观上:通过面向对象进行整体上设计
+            2. 微观上:执行和处理数据，仍然是面向过程。
+
+   3. 对象和类的概念:
+
+      1. ​	在我们人类的认知中，其实就是面向对象，比如我们现在让大家认识一下天使，我们大家都不知道是什么样的，最好的办法就是，给你们摆在面前的4个天使，带翅膀的美女，让大家看，看完之后大家都认识啦。
+
+      2. 类可以看作是一个模版,或者是图纸，系统根据类定义造出来的对象，我们要造一个车，怎么造，类就是这个图纸，规定了汽车的详细信息，然后根据图纸将汽车造出来。
+
+      3. 类:我们称之为class，对象我们称之为Object，instance(实例)，以后我们说某个类的对象，某个类的实例，是一样的意思。
+
+      4. ```java
+         //属性用来定义该类或者该对象包含的数据或者静态的特征，属性作用范围是整个类体，
+             //在定义成员变量时候可以对其进行初始化，如果不对其进行初始化，Java使用默认的值对其初始化。
+             int id;//
+             String stuName;
+             int age;
+         
+             //方法:用于定义该类或者该类实例的行为特征和功能实现，方法是类和对象行为特征的抽象，
+             // 方法很类似于面向过程中的函数，函数是最基本的单位，整个程序有一个个函数调用组成，
+             //面向对象过程中，整个程序是最基本单位是类，方法是从属于类和对象的。
+             //方法的定义格式:
+             //[修饰符] 方法返回值类型 方法名称(形参数列表){
+             //  语句
+             // }
+         
+             void study(String 学习){
+                 System.out.println("开始上课啦");
+             }
+         
+             //构造方法---
+             Car(){
+         
+             }
+         ```
+
+      5. ![image-20210610225441484](../note_book/images/image-20210610225441484.png)
+
+      6. 属性定义格式:
+
+         1. [修饰符号] 属性类型 属性名=值；
+
+         2.  
+
+            ```java
+            int id;//
+                String stuName;
+                int age;
+            ```
+
+      7. 方法的定义格式:
+
+         1. ```java
+            //[修饰符] 方法返回值类型 方法名称(形参数列表){
+                //  语句
+                // }
+            void study(String 学习){
+                    System.out.println("开始上课啦");
+                }
+            ```
+
+      8. 构造方法的基础用法:
+
+         1. 构造器也被称为构造方法，用于对象的初始化，构造器是一个创建对象时候被自动调用的特殊方法，目的是对象的初始化，构造器的名称应该与类保持一致，Java通过new关键字来调用构造器，从而返回该类的实例,是一种特殊的方法。
+
+         2. ```java
+            //类的名字 ==方法的名字()
+            //声明格式
+            [修饰符] 类名(形参数列表){
+              //n语句
+            }
+                Car(){
+            
+                }
+            ```
+
+         3. 构造器4个要点:
+
+            1. 构造器通过new关键字调用，构造器虽然存在返回值，但是不能定义返回值(返回值的类型肯定是类本身)不可以在构造器中使用return返回某个值。
+
+            2. 如果我们没有定义构造器，则编译器会自动定一个无参数的构造函数，如果已经定义，则编译器不会自动添加
+
+            3. 构造器的方法必须和类名一致。
+
+            4. ```java
+               double x,y;
+               
+                   public Point(double _x,double _y){
+                       x = _x;
+                       y = _y;
+                   }
+               
+               
+               
+                   public double adddouble(Point point){
+                       return Math.sqrt((x-point.x)*(x-point.x)+(y-point.y)*(y-point.y));
+                   }
+               
+               
+                   public static void main(String[] args) {
+                       Point point1= new Point(3,4);
+                       Point point2 =new Point(0,0);
+                       double aa = point1.adddouble(point2);
+                       System.out.println(aa);
+                   }
+               ```
+
+   4. 面向对象内存分析:
+
+      1. java虚拟机内存模型概念:![image-20210611204541058](../note_book/images/image-20210611204541058.png)
+      2. 从属于线程的内存区域:
+         1. JVM的内存区域划分中，有部分区域是线程私有的，有部分区域是属于整个JVM进程的，我们将这一部分归为一类。![image-20210611204945577](../note_book/images/image-20210611204945577.png)
+            1. 程序计数器，在JVM规范中，每个线程都有自己的程序计数器，这是一块比较小的代码空间，存储在当前线程正在执行的Java方法的JVM指令地址，即字节码的行号，如果正在执行的Native方法，则这个计数器为空。
+            2. 虚拟机栈(Java Virtal Machine Stack),同样也是属于线程私有区域，每个线程在创建的时候都会创建一个虚拟机栈，生命周期与线程一致，线程退出时候，线程的虚拟机栈也被回收，虚拟机栈内部保持一个个栈帧，每次调用都会
+            3. 本地方法栈:与虚拟机的栈类似，本地方法栈实在调用本地方法的时候，每一个线程都有一个本地方法栈。
+         2. 堆:
+            1. 堆:几乎所有的创建的Java对象实例，都是被直接分配到堆上的，堆被所有的线程所共享，，在堆上的区域，会被垃圾回收器做进一步划分，例如新生代，老年代的划分，Java虚拟机在启动的时候，可以使用"Xmx"之类的参数指定堆区域的大小。
+         3. 方法区:
+            1. 方法区和堆一样，也是所有的线程共享，存储在虚拟机加载的元数据，包括类的信息，常量，静态变量，即时编译器编译后的代码等数据。
+            2. 方法区实际上也是一种Java虚拟机的规范，由于方法区的数据和堆存储的数据一致，实质上也是堆，因此，在不同的JDK版本中方法区的实现方式不一样。
+            3. JDK7以前，方法区就是堆中的永久代，JDK开始去，永久化把静态变量，字符串常量池等等都挪到了堆内存中。![image-20210613181359253](../note_book/images/image-20210613181359253.png)
+            4. JDK8以后,永久代不在存在，存储类的信息，编译的代码数据已经移动到啦MetaSpace(元空间里面)，元空间并没有在堆内存中，而是占用本地的内存的。
+            5. ![image-20210613234554093](../note_book/images/image-20210613234554093.png)
+            6. 运行时常量池:
+               1. 这是方法区的一部分，主要存放两大类变量:
+                  1. 字面量:如文本字符串，final常量
+                  2. 符号引用,存放啦与编译相关的一些常量，因为Java不像是C++那样有链接的过程，因此字段方法这一些符号引用在运行期就需要进行转换，以便得到真正的内存入口地址。
+            7. 直接内存:
+               1. 直接内存并不属于Java规定的属于Java虚拟机运行时数据区的一部分，Java的NIO可以使用Native方法直接在java堆外的分配内存，使用DirectByteBuffer对象作为这个堆外内存的引用。
+
+   5. 程序执行内存分析过程:虚拟机栈(stack) 堆heap 方法区:method area
+
+      1. 虚拟机栈特点如下:
+         1. 栈描述的是方法执行的内存模型，每个方法被调用都会创建一个栈(存储局部变量，操作数，方法出口等等)
+         2. JVM为每个线程创建一个栈，用于存放该线程执行方法的信息(实际参数，局部变量等)
+         3. 栈属于线程私有，不能实现线程间的共享。
+         4. 栈的存储特点是"先进后出，后进先出"
+         5. 栈是有系统自动分配，速度快，栈是一个连续的内存空间。
+      2. 堆的特点:
+         1. 堆用于存储创建好的对象和数组(数组也是对象)
+         2. JVM只有一个堆，被所有线程共享
+         3. 堆是一个不连续的内存空间，分配灵活，速度慢
+      3. 方法区(静态区)特点如下:
+         1. 方法区域是JAVA虚拟机规范，可以有不同的实现。
+            1. JDK7以前被称为"永久代"
+            2. JDK7部分去除"永久区"，静态变量，字符串常量池，都挪到啦内存中，
+            3. JDK8是元数据空间和堆结合起来。
+         2. JVM只有一个方法区，被所有线程共享
+         3. 方法区实际上也是堆，只是用于存储类，常量相关的信息
+         4. 用来存储程序中永远是不变的或者唯一的内容(类信息,静态变量，字符串常量等)
+      4.  ![image-20210614004002247](../note_book/images/image-20210614004002247.png)
+
+9. 垃圾回收机制:
+
+   1. 垃圾回收的原理和算法:
+      1. 内存管理:Java的内存管理很大程度上指的就是:堆中的对象，其中包含对象空间的分配和释放，
+      2. 对象空间的分配:使用new关键字创建对象即可。
+      3. 对象空间的释放:将对象赋值null即可，垃圾回收器将负责回收所有的不可达对象的内存空间。
+   2. 垃圾回收过程:
+      1. 任何一种垃圾回收的算法一般要做两件事
+         1. 发现垃圾
+         2. 回收无用对象占用的内存空间
+      2. 垃圾回收机制可以将无用的对象进行回收，无用的对象指的就是没有任何变量引用该对象，Java的垃圾回收通过相关算法发现无用对象，并进行清除和整理。
+      3. 垃圾回收相关算法:
+         1. 引用计数法:
+            1. 堆中的每个对象都对应一个引用计数器，当有引用对象指向这个对象的时候，引用计数器加1，而当指向该对象的引用失效(引用变成null),引用计数器增加1，最后如果该对象的引用计算器的指为0的时候，则java垃圾回收器会认为该对象是无用对象并对其进行回收，优点是算法简单，缺点是‘循环引用的无用对象’，无法识别。
+         2. 引用可达法(根搜索算法):
+            1. 程序把所有的引用关系看作一张图，从一个节点GCRoot 开始，寻找对象的引用节点，找到这个节点以后，继续寻找这个节点的引用节点，当所有的引用节点寻找完毕之后，剩余的节点则被认为是没有被引用到的节点，即无用的节点。
+      4. 通用的分代垃圾回收机制:
+         1. 分代垃圾回收机制，是基于这样一个事实，不同的对象的生命周期是不一样，因此，不同生命周期的对象可以采取不同的回收算法，以便提高回收效率，我们将对象分为三种不同状态：年轻代，年老代，持久代，同时将处于不同的状态的对象放到堆中不同的区域，JVM将堆划分为Eden，Survivor和Tenured/Old空间。
+         2. 年轻代:
+            1. 所有新生成的对象首先都是放在Eden区内的，年轻代的目标就是尽可能快速的收集掉哪一些生命周期短的对象，对应的是Minor GC，每次Minor GC会清理年轻代内存，算法采用效率较高的复制算法，频繁的操作，但是会浪费内存空间，当年轻代区域存放在满对象后，就将对象存放到年老代区域。
+         3. 年老代:在年轻代经历了N(默认是15次)垃圾回收仍然存活的对象，就会被放到年老代中，因此可以认为年老代中存放是一些生命周期较长的对象，年老代对象越来越多，我们就需要启动MajorGC和full(全量回收)，来一次大扫除，全面清理年轻代区域和年老代区域。
+         4. 永久代:由于存放静态文件，如Java类，方法等，持久代对垃圾回收没有显著影响，JDK7以前就是方法区的一种实现，JDK8以后已经没有永久代，使用了metaspace元数据空间和堆替代。
+         5. ![image-20210618001758966](../note_book/images/image-20210618001758966.png)
+         6. MinorGC:用于清理年轻代区域，Eden区域满了就会触发一次MinorGC，清理无用对象，将有用的对象复制到Survivor1，Survivir2区域中。
+         7. MajorGC:用于清理年老代区域
+         8. FullGC:用于清理年轻代，年老代区域，成本较高，会对系统产生影响。
+   3. JVM调优和FullGC:
+      1. 在对JVM调优的过程中，很大的一部分工作就是对于FullGC的调节，有如下原因可能导致FullGC
+      2. 年老代被写满
+      3. 持久代被写满
+      4. System.gc被显示调用
+      5. 上一次GC之后，heap的各域分配策略动态变化。
+   4. 开发中容易造成造成内存泄漏的操作:
+      1. 创建无用的对象:比如我们在做大量拼接字符串的时候,使用了String，而不是StringBuilder.
+      2. 静态集合类的使用:
+         1. 想HashMap，Vetor，List等使用最容易出现内存泄漏的,这一些静态变量的生命周期和应用程序一致，所有的对象Object也不能够被释放。
+      3. 各种链接对象(IO流对象，数据库连接对象，网络连接对象)未关闭。
+         1. IO流对象，数据库连接对象，网络连接对象等连接对象属于物理连接，和硬盘或者网络连接的时候，不使用的时候一定要关闭 
+      4. 监听器的使用:
+         1. 释放对象没有删除对应的监听器。
+      5. 其他要点:
+         1. 程序员无权调用垃圾回收器
+         2. 程序员可以调用System.gc()，该方法只是通知JVM并不是运行垃圾回收器，尽量少用，会申请启动FullGC，成本比较高，影响系统性能。
+         3. finalize方法，是Java提供给程序员用来释放对象或者资源的方法，但是尽量少用，
+
+10. this static关键字:
+
+    1. 对象创建的过程和this本质:
+
+       1. 构造方法的是创建java对象的重要途径，通过new关键字调用构造器时，构造器也确实返回该类的对象，但这个对象并不是完全有构造器负责创建的，创建一个对象分位如下四步:
+          1. 分配对象空间，并将对象成员变量初始化为0或者空。
+          2. 执行属性的值，显示初始化。
+          3. 执行构造方法。
+          4. 返回对象的地址相关的变量。
+          5. this关键字的本质是"创建好的对象的地址，"由于在构造方法调用前，对象已经被创建，因此,在构造方法中也可以使用this代表当前对象。
+
+    2. this常用的对象:
+
+       1. 在程序产生二义性之处，应使用this来指明当前对象，普通的方法中，this总是指向调用该方法的对象，构造方法中,this总是指向正要初始化的对象。
+       2. 使用this关键字调用重载的构造方法，避免相同的初始化代码，但只能在构造方法中的第一句
+       3. this不能用在static方法中。
+
+    3. ```java
+           int id;
+           String name;
+           String pwd;
+       
+          public User(String pwd,int id,String name) {
+               this(id,name);//可以调用其他类型的构造器，并且必须位于第一行 
+               this.pwd = pwd;
+           }
+       
+           public void User(int id ,String name){
+               this.id = id;
+               this.name =name;
+           }
+       
+           public void login(){
+               System.out.println("我的用户名是:"+this.name);
+           }
+       ```
+
+11. static关键字:
+
+    1. 在类中,用static关键字声明的成员变量被称为静态变量，也成为类变量，类变量的额声明周期和类相同，在整个应用程序之间都有效，他有如下特点:
+
+       1. 为该类的公用变量，属于类，被该类的所有实例共享，在被类载入的时候，被显式初始化，
+
+       2. 对于该类 所有对象来说，stati成员变量只有一份，被该类 所有对象共享。
+
+       3. 一般类名.类属性/方法来调用，(也可以通过对象应用或者类名)来访问静态成员。
+
+       4. 在static方法中不可直接访问非 static的成员。
+
+       5.  
+
+          ```java
+          int id;
+              String name;
+              String pwd;
+          
+              static String  comPany ="北斗星IT科技";
+          
+              public User_01(int id, String name, String pwd) {
+                  this.id = id;
+                  this.name = name;
+                  this.pwd = pwd;
+              };
+          
+          
+              //非static方法
+              public void login(){
+                  System.out.println("登陆名称:"+this.name);
+              }
+          
+              //static方法
+              public static void printCompany(){
+                  //static 属性可以直接调用
+                  System.out.println("公司名称是:"+comPany);
+              }
+          
+          
+              public static void main(String[] args) {
+                  //static 方法通过类名直接调用
+                  User_01.printCompany();
+          
+                  User_01 user_01= new User_01(0,"闫天蓬","123456");
+                  //非static方法通过对象名.方法名调用
+                  user_01.login();
+          
+              }
+          ```
+
+       6. ![image-20210621232105457](../note_book/images/image-20210621232105457.png)
+
+       7.  静态初始化块:
+
+          1. 构造方法不能用于对象的初始化，静态初始化块，用于类的初始化操作，在静态初始化块中不能直接访问非static成员的变量。
+
+12. 变量的分类:
+
+    1. 从整体上我们可以把变量分为局部变量，成员变量和静态变量.
+    2. ![image-20210622171233045](../note_book/images/image-20210622171233045.png)
+    3. 局部变量:
+       1. 方法或者语句块内部定义的变量，生命周期是从声明的位置开始到方法或语句块执行完毕为止，局部变量在使用前必须先声明，初始化在使用。
+
+13. 包机制:
+
+    1. 包机制是Java中管理类的重要手段，开发中我们会遇到大量同名的类，通过包我们相对容易的对解决类重名的问题，也可以实现对类的有效管理，包对于类，相当于文件夹对于文件。
+
+    2.  package:我们通过package实现对类的管理，package的使用有两个特点
+
+       1. 通常是类的第一句非注释性语句。
+
+       2. 包名:域名到着写即可，在加上模块的名字，便于内部管理。
+
+       3. ```java
+          com.beidouxing.test
+          com.shanghai.module
+          ```
+
+       4. ![image-20210623160645613](../note_book/images/image-20210623160645613.png)
+
+    3. import 导入类:
+
+       1. 如果我们要使用其他包的类，需要使用import导入，从而可以在本类中直接通过类名来调用，否则我们后面书写类的完整包名和类名，import后，便于编写代码，提高可维护性。
+
+       2. ```java
+          package com.yantianpeng.day_07.test_02;
+          import com.yantianpeng.day_07.test_01.Students;//导入其他包中的类
+          import java.sql.Date;
+          
+          public class class_01 {
+          
+          
+              Date now;//导入sql包的中时间处理类
+          
+              public static void main(String[] args) {
+                  Students student= new Students(1,"张三",true);
+                  student.login();;
+              }
+          }
+          ```
+
+    4. 静态导入 static:
+
+       1. 静态导入是(static import )在jdk1.5之后新增的一个功能，其作用是导入指定类的静态属性，这样我们可以直接使用静态属性。
+
+       2. ```java
+          import static java.lang.Math.PI; //导入静态变量PI
+          import static java.lang.Math.*;//导入Math类中所有的静态属性
+          
+          public class Test_static {
+          
+          
+              public static void main(String[] args) {
+                  System.out.println("圆周率是:"+PI);
+                  System.out.println("圆周率是:"+ PI);
+              }
+          
+          }
+          
+          ```
+
+14. 面向对象:
+
+    1. 继承:继承是面向对象的三大特性之一，它让我们更加容易的实现对已有类的扩展，更加容易实现对现实世界的建模。
+
+    2. 作用:
+
+       1. 代码的复用，更加容易实现类的扩展
+       2. 方便对事物建模。
+
+    3. 继承的实现:
+
+       1. 继承让我们更加容易实现类的扩展，比如，我们定义人类，在定义Boy类的时候我们只需要扩展人类即可，实现了代码的复用，不用在重复发明新的轮子，
+
+       2. 从英语字母意思上我们可以知道，extends的意义是扩展，子类是父类的扩展，现实世界中的继承无处不在。
+
+       3. ![image-20210623194203689](../note_book/images/image-20210623194203689.png)
+
+       4. ```java
+          class  person{
+              int id;
+              String name;
+              String sex;
+          }
+          
+          
+          class  Student extends person{
+              String major;//学生自己的属性和方法
+          
+          
+          
+              public Student(int id,String name,String sex,String major){
+                  //其中id ,name ,sex 等属性都是从父类继承过来的
+                  this.id = id;
+                  this.name = name;
+                  this.sex = sex;
+                  this.major = major;
+              }
+          
+          
+              public void info(){
+                  System.out.println("我的名字是:"+this.name+",我的公司是:"+major);
+              }
+          ```
+
+    4. 继承使用要点:
+
+       1. 父类也被称为超类，基类。子类:被称为派生类等
+       2. Java中只有单继承，没有想C++那样的多继承，多继承会引起结构混乱，使得继承链过于复杂，系统难以维护。
+       3. Java类中没有多继承，但是接口有多继承。
+       4. 子类继承父类，可以得到父类的全部属性和方法(除了父类的构造方法)，但不见得可以直接之访问(比如父类的私有方法是不能被访问的)
+       5. 如果定义一个类的时候，没有调用extends方法，则他的父类是java.lang.object.
+
+    5. 方法的重写:
+
+       1. 子类通过重写父类的方法，可以用自身的行为替换父类的行为，方法的重写是实现多态的必要条件
+
+       2. "==" 方法名和形参数列表必须一致。
+
+       3. "<="返回值类型(可以用在继承里面的返回值)和声明异常类型，子类小于等于父类
+
+       4. ">="访问权限，子类大于等于父类
+
+       5. ```java
+          public class person01 {
+              int id;
+              String name;
+              String sex;
+            
+              public void rest(){
+                  System.out.println("开始休息了.....");
+              }
+          }
+          
+          
+          public class man_person extends person01{
+              //子类重写父类的方法，保持方法名称
+              public void rest(){
+                  System.out.println("男生开始休息了.....");
+              }
+          }
+          ```
+
+          
+
+    6. Instanceof 运算符号:
+
+       1. instanceof 是二元运算符号，左边的对象，右边的是类，当对象是有该类或者该类的子类创建的时候，返回的是true ，否则返回的是false。
+
+       2. ```java
+          //instanceof是二元运算符，左边是对象，右边是类，当对象是该类或者子类所创建的对象的时候返回的是true
+              //否则返回的事false;
+          
+          
+          
+              public static void main(String[] args) {
+          
+                  User user= new User(1,"张三");
+                  System.out.println(user instanceof User);//返回的true
+          //        System.out.println(user instanceof User_01);//返回的是false
+              }
+          ```
+
+    7. final:关键字的作用:
+
+       1. 修饰变量:被他修饰的变量不可改变，一旦赋值，就不能被重新赋值,final int MAX_SPEED = 120;
+
+       2. 修饰方法:该方法不可以被子类重写，但是可以被重载 
+
+       3. 修饰类:修饰的类不能被继承，比如Math，String等。
+
+       4. ```java
+          public class Test_final {
+          
+              //该变量的值，不可以被修改
+              final String name ="闫天蓬--开发工程师--5年--阿里P8";
+          
+          
+              //该方法不可以被重写 但是可以被重载
+              public final  void rest(){
+                  System.out.println("开始休息");
+              }
+              
+          }
+          
+          final class A{
+              //使用final修饰的话  表示此类不可以被继承
+          }
+          ```
+
+    8. 继承和组合:
+    
+       1. 我们可以通过继承方便的复用已经定义过的代码，还有一种方式，可以方便的是实现代码的复用，那就是组合。
+    
+       2. 组合不同于继承，更加灵活
+    
+       3. 组合就是把父类当成子类的属性，通过调用子类的属性来访问父类的方法和属性。
+    
+       4. 组合比较灵活，继承只能有一个类，但是组合可以有多个属性，所有有人声称组合优于继承，开发中可以不使用继承，但是一般不建议大家走极端。
+    
+       5. 继承除了代码的复用，也方便我们对事务进行建模。所以对于"is-a"关系建议使用继承，has-a关系建议使用组合。
+    
+       6. ```java
+          public class Dog {
+          
+              String name;
+              String color;
+          
+          
+              public void shout(){
+                  System.out.println("汪汪叫....");
+              }
+          
+          }
+          
+          
+          public class Taidi {
+          
+          
+              Dog dog ;//把父类作为子类的属性，
+          
+              int age;
+          
+          
+              public static void main(String[] args) {
+                  Taidi taidi= new Taidi();
+                  taidi.dog.shout();//通过组合的方式调用父类的方法
+              }
+          }
+          ```
+    
+15. Object类:
+
+    1. Object类基本特性:Object是所有java类的根基类，也就意味着所有的Java对象都拥有Object类的属性和方法，如果我们在类的声明中没有使用extends关键字，我们默认指明其父类， 则默认继承Object。
+
+    2. toString方法:
+
+       1. Object类中定义有public String toString(){};其返回值是String类型， 在Object类中，toString的源码是:
+
+          ```java
+           public String toString() {
+                  return getClass().getName() + "@" + Integer.toHexString(hashCode());
+              }
+          ```
+
+       2. 重写toString类:
+
+          ```java
+          int id;
+              String name;
+              String pwd;
+          
+              //重写toString方法
+              public String toString(){
+                  return "我的编号是:"+id+",w我的名字是"+name;
+              }
+          
+          
+              public static void main(String[] args) {
+                  Cat cat = new Cat();
+                  System.out.println(cat.toString());
+              }
+          ```
+
+    3. ==和equals方法:
+
+       1. ==代表比较双方是否相同，如果是基本数据类型表示的是值相等，如果是引用类型表示的是地址相同就是同一个对象。
+
+       2. Object类中定义有:public boolean equals(Object obj)方法，提供定义对象内容类型相等的逻辑，比如我们在公安系统中，认为id相同，就是同一个人，学籍系统中认为学号相同的人就是同一个人。
+
+       3. Object的equals方法默认是比较两个对象的hashcode，是同一个对象的引用时返回的是true，否则返回的false，但我们可以根据我们的要求重写equals方法。
+
+       4. ```java
+          public class monkey {
+          
+              int id;
+              String name;
+              String pwd;
+          
+          
+          
+              monkey(int id,String name,String pwd){
+                  this.id = id;
+                  this.name = name;
+                  this.pwd = pwd;
+              }
+              //重写父类的方法 比较只有id相等话就表示是同一个对象
+              //equals方法的重写 用于比较对象的内容是否相等
+              public boolean equals(Object obj) {
+                  if (obj==null){
+                      return false;
+                  }else{
+                      if(obj instanceof monkey){
+                          monkey monkey1 = (monkey)obj;
+                          if(this.id==monkey1.id&&this.name==monkey1.name&&this.pwd==monkey1.pwd){
+                              return true;
+                          }
+                      }
+                  }
+                  return false;
+              }
+          
+          
+          
+              public static void main(String[] args) {
+                  monkey monkey1 = new monkey(1,"闫天蓬","123456");
+                  monkey monkey2 = new monkey(1,"闫天蓬","123456");
+          
+                  System.out.println(monkey1);
+                  System.out.println(monkey2.toString());
+                  //直接使用Object中的equals返回的false;
+                  //我们可以通过重写来实现判断对象是否相等
+                  System.out.println(monkey1.equals(monkey2));
+              }
+          }
+          ```
+
+    4. super():
+
+       1. super 可以看作是直接父类的引用，可以通过super关键字来访问父类中被子类覆盖方法或者属性。
+
+       2. 使用super调用普通方法，语句位置没有限制，可以在子类中随便调用。
+
+          1. 若是构造方法的第一行代码没有显式的调用super()或者this(),那么java默认会调用super();含义是调用父类的无参数构造器方法，这里的super()可以省略。
+
+          2. ```java
+             public class TestPigFather {
+             
+                 public static void main(String[] args) {
+                     //实例化子类，也会调用父类的无参数构造器
+                     TestPigchilder2 testPigchilder2= new TestPigchilder2();
+                 }
+             }
+             
+             
+             class  TestPigchilder1{
+                  public TestPigchilder1(){
+                      System.out.println("父类中的无参数构造器");
+                  }
+             }
+             
+             class TestPigchilder2 extends TestPigchilder1{
+                     public TestPigchilder2(){
+                         //会默认调用父类的无参数构造器
+                         System.out.println("子类中无参数构造器");
+                     }
+             }
+             ```
+
+          3. ```java
+             public class TestFather {
+                 public  int id;
+             
+                 public void f(){
+                     id =100;
+                     System.out.println("当前父类的值是:"+id);
+                 }
+             }
+             
+             
+             public class TestChilder extends  TestFather {
+             
+             
+                 public int id ;
+             
+                 public void f(){
+                    super.f();//调用父类中的方法的和属性
+                    id = 200;
+                    System.out.println("子类中id的值是:"+id);
+                     System.out.println(id);//调用子类中的id。
+                     System.out.println(super.id);//调用父类中的id
+                 }
+             
+             
+                 public static void main(String[] args) {
+                     TestChilder testChilder =new TestChilder();
+                     testChilder.f();
+                 }
+             }
+             ```
+
+       3. 继承树追溯:
+
+          1. 属性/方法查找顺序:
+             1. 查找当前类中没有属性
+             2. 依次上溯到每个父类，查看父类中是否存在，直到查到到object中
+             3. 如果没有找到的话，则出现编译错误。
+             4. 上面的步骤，只要找到变量或者属性，则过程终止。
+          2. 构造方法调用顺序:
+             1. 构造方法第一句总是super():来调用父类对应的构造方法，所以流程是:先向上追溯到Object然后在一次向下执行类的初始化方法和构造方法，直到当前子类为止。
+             2. 静态初始化块调用顺序，与构造方法的调用顺序一致。
+
+16. 封装:
+
+    1. 封装是面向对象的三大特征之一,对于程序合理的封装，让外部调用的更加方便，更加有利于协作，同时对于实现着来说也更加容易修正和改版代码.
+
+    2. 封装的含义和作用:
+
+       1. 我们看电视的时候，只需要安一下开关和换台就可以了，没有必要关心电视机的内部结构，制造厂家为了方便我们看电视，把复杂的内部细节全部隐藏起来，不需要用户知道，是怎么实现的，我们只需要这么操作即可。
+
+       2. 需要让用户知道的我们才暴露出来，不需要让用户知道的我们全部隐藏起来，这就是封装，说的专业一点，封装就是把对象的属性和操作结合起来作为一个独立的个体，
+
+       3. 我们设计程序"高内聚，低耦合,"高内聚就是类的内部操作细节自己完成，不允许外界干涉。低耦合就是仅仅暴露少量的方法给外部，尽量方便外部的调用。
+
+       4. 变成封装的具体优点:
+
+          1. 提高代码的安全性。
+          2. 提高代码的复用性
+          3. 高内聚:封装细节，便于修改内部代码，提高可维护性。
+          4. 低耦合:简化外部调用，便于调用者使用，便于扩展和协作。
+
+       5. 封装的实现--使用访问控制符
+
+          1. Java是使用访问控制符，来控制哪一些细节需要封装，哪一些细节需要暴露，Java中4种访问控制符，分别是private ,default,protected ,public 他们说明了面向对象的封装性，所以我们要利用他们尽可能的让访问的权限降到最低，从而提高了安全性。
+          2. ![image-20210628224017892](../note_book/images/image-20210628224017892.png)
+          3. Private 表示私有化，只有类自己可访问。
+          4. default表示没有修饰符只有同一个包的类可以访问
+          5. protected表示可以被同一个包的类以及其他包中的子类访问
+          6. public表示可以被该项目的所有包中的所有类访问。
+
+       6.  关于protected的两个细节:
+
+          1. 若父类和子类在同一个包中，子类可以访问父类的protected成员，也可访问父类对象的protected成员。
+          2. 若子类和父类不在同一个包中，子类可以访问父类的protected成员，但是不可以访问父类对象的protected成员。
+
+       7. 封装使用的细节:
+
+          1. 属性使用private访问权限。
+
+          2. 属性私有化之后，提供相对应的get/set方法，来访问相关属性，这一些方法通常是public修饰，已提供对属性的赋值，与读取操作.(需要注意的是:boolean变量的get方法是is开头的)
+
+          3. 一些只用于本类的辅助性方法可以用privat修饰，希望其他的类调用的方法用public修饰。
+
+          4. ```java
+             //JavaBean封装演示
+             private String name;
+                 private int age;
+                 private boolean flag;
+             
+                 public String getName() {
+                     return name;
+                 }
+             
+                 public int getAge() {
+                     return age;
+                 }
+                 //boolean类型的值是is开头的
+                 public boolean isFlag() {
+                     return flag;
+                 }
+             
+                 public void setName(String name) {
+                     this.name = name;
+                 }
+             
+                 public void setAge(int age) {
+                     this.age = age;
+                 }
+             
+                 public void setFlag(boolean flag) {
+                     this.flag = flag;
+                 }
+             ```
+
+17. 多态:
+
+    1. 多态的概念和实现:
+
+       1. 多态指的是同一个方法调用，由于对象的不同不有不同的行为。
+
+       2. 现实生活中，同一个方法具体实现会完全不同，比如:同样是调用人休息的方法，张三是睡觉，李四是旅游，自己是敲代码，数学教授是做数学题；同样是调用吃饭的方法，中国人用的是筷子，英国人是刀叉，印度人是用手吃饭。
+
+       3. 多态的要点:
+
+          1. 多态是方法的多态，不是属性的多态(多态和属性无关)。
+          2. 多态存在的要有3个必要的条件，继承，方法重写，父类指向子类对象。
+          3. 父类引用指向之类对象之后，用该父类引用调用子类重写方法，此时多态就出现啦。
+
+       4. ```java
+          public class Animal {
+          
+                  public  void shout(){
+                      System.out.println("叫了一声");
+                  }
+          }
+          
+          
+          class Dog extends Animal{
+              public void  shout(){
+                  System.out.println("小狗叫");
+              }
+          }
+          
+          
+          class Brid extends Animal{
+              public  void shout(){
+                  System.out.println("小鸟叫");
+              }
+          }
+          
+          class Pig extends Animal{
+              public void shout(){
+                  System.out.println("猪叫...");
+              }
+          }
+          
+          //调用类
+           //定一个静态的方法
+              static void animalCry(Animal animal){
+                  animal.shout();
+              }
+              //定义一个普通的方法
+              public  void  test_poly_01(Animal animal){
+                  animal.shout();
+              }
+          
+          
+              public static void main(String[] args) {
+                  TestPoly testPoly= new TestPoly();
+                  //父类引用 = new 子类对象。
+                  Animal a1 = new Dog();//父类引用指向子类对象
+                  animalCry(a1);
+                  testPoly.test_poly_01(a1);
+                  Animal a2 = new Pig();
+                  animalCry(a2);
+                  testPoly.test_poly_01(a2);
+              }
+          ```
+
+18. 对象的转型:
+
+    1. 父类引用指向子类对象，我们称之为向上转型，属于自动转型
+
+    2. 向上转型后的父类引用变量只能调用它编译类型的方法，不能调用它运行时类型的方法，这时我们就需要进行类型的强制转换，我们称之为向下转型。
+
+    3. ```java
+       public static void main(String[] args) {
+       
+               Object obj = new String("张三");//向上转型
+               //编译器认为obj是Object类型不是String类型，
+               //编写程序的时候，如果想调用运行时的方法，只能进行类型的强制转换。
+               // 不然通不过编译器的检查
+               //obj.charAt(0);//无法调用该类型的方法，
+               String str_01 =  (String)obj ; //向下转型
+               System.out.println(str_01.charAt(0));//获取制定索引处的字符。
+               System.out.println(str_01==obj);//返回的true,表示指向的是同一个引用。
+               
+           }
+       ```
+
+    4. 在向下转型的过程中，必须将引用的变量转成真实子类类型(运行时类型)，否则会出现类型转换异常ClassCastException。
+
+    5. ```java
+         Object obj = new String("张三");   
+          	StringBuffer stringBuffer = (StringBuffer) obj;
+               //会出现类型异常的错误，因为他的真是类型是String 而不是StringBuffer;
+               System.out.println(stringBuffer.charAt(0));
+       ```
+
+19. 抽象类:
+
+    1. 抽象方法:
+
+       1. 使用abstract修饰的方法，没有方法体，只有声明，定义的是一种规范，就是告诉子类必须要给抽象方法提供具体的实现。
+
+    2. 抽象类:
+
+       1. 包含抽象方法的类就是抽象类，我们通过定义abstract方法定义规范，然后要求子类必须定义具体的实现，通过抽象类，我们就可以做到严格限制子类的设计，使子类之间更加通用。
+
+    3. 要点:
+
+       1. 有抽象方法的类只能被定义为抽象类
+       2. 抽象类不能被实例化，即不能使用new来实例化抽象类
+       3. 抽象类可以包含属性，方法，构造方法，但是构造方法不能用来new实例,只能被子类调用
+       4. 抽象类只能被用来继承
+       5. 抽象方法必须被子类实现。
+
+    4. ```java
+       //定义一个抽象类
+       public abstract class Test_abstract {
+           //使用abstract修饰的方法  被称为抽象类
+           abstract public void test_001();
+       
+           abstract public int test_002();
+       
+           abstract public String test_003();
+       }
+       
+       //继承抽象类
+       //继承抽象类的子类，必须实现父类的抽象方法
+       public class Test_abstract_01 extends Test_abstract {
+       
+       
+           @Override
+           public void test_001() {
+               System.out.println("实现了父类的第一个方法...");
+           }
+       
+           @Override
+           public int test_002() {
+               return 0;
+           }
+       
+           @Override
+           public String test_003() {
+               return "001";
+           }
+       }
+       ```
+
+20. 接口:
+
+    1. 接口就是规范，定义的是一组规则，体现了现实世界中“如果你是...则必须能..”的思想，如果你是天使，则鼻血可以飞，如果你是汽车，则必须能跑，如果你是好人，则必须能打败坏人，如果你是坏人，则必须进监狱。
+    2. 接口的本质是契约，就像我们人一样，制订好规则大家都遵循
+    3. 面向对象的精髓，是对对象的抽象，最能体现这一点就是接口。
+    4. 接口的作用:
+       1. 为啥要做接口，接口和抽象类的区别
+       2. 接口就是比抽象类，还要抽象的抽象类，可以更加规范的对子类进行约束，全面专业地实现了:规范和具体的分离。
+       3. 抽象类还提供了某一些具体的实现，接口不提供任何的实现，接口中所有方法都是抽象方法，接口是完全面向规范的，规定了一批具有公共方法的规范
+       4. 从接口的实现者来看，接口定义了可以向外部提供的服务
+       5. 从接口的调用者来看，接口定义定义啦实现者可以提供哪一些服务。
+       6. 接口是两个模块之间通信的标准，通信的规范，如果你把你要设计的模块之间的接口定义好，就像相当于完成啦系统的设计大纲，剩下的就是添砖加的具体实现啦，
+       7. 接口和实现类不是父子关系，是实现规则额关系，
+       8. 
